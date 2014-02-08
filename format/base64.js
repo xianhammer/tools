@@ -14,9 +14,9 @@ var Base64 = (function(){
       }).join("");
     },
     fromBase64: function(s) {
-      var s0 = s.match(/.../g);
+      var s0 = s.match(/..../g);
       if (!s0) return s;
-      return s.match(/..../g).map(function(v){
+      return s0.map(function(v){
         var b0 = table.indexOf(v[0]), b1 = table.indexOf(v[1]), b2 = table.indexOf(v[2]), b3 = table.indexOf(v[3]);
         var s = String.fromCharCode((b0<<2) + (b1>>4), ((b1&0x0F)<<4) + (b2===64?0:(b2>>2)));
         if (b3!==64) s += String.fromCharCode(((b2&0x03)<<6) + b3);
